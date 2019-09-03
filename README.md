@@ -1,5 +1,5 @@
 ## About EZDomain
-EZdomain is based on python programming tool that use to enumerate and manipulate the domains such as sub-domains, directory scanning, S3 bucket by customizing the position of the payload in the URL.
+EZdomain is based on python programming tool that use to enumerate and manipulate the domains such as sub-domains, directory, S3 bucket by customizing the position of the payload in the URL.
 
 ## Installation
 ```
