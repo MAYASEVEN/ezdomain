@@ -31,7 +31,7 @@ sudo pip install -r requirements.txt
 | -h           | --help     | show this help message and exit
 
 ### Examples
-* To list all the options use -h
+* To list all the options use -h\
 ```python ezdomain.py -h```
 
 * To find the sub-domains\
