@@ -22,7 +22,7 @@ sudo pip install -r requirements.txt
 ## Usage
 
 | Short        | Long       | Description
-| ------------ |:----------:|------------:
+| ------------ |------------|------------
 | -d           | --domain   | Providing a domain name (ex. domain-*.com)
 | -w           | --wordlist | Providing a path of a wordlist file
 | -o           | --output   | Providing a path of output file
