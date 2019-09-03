@@ -7,7 +7,7 @@ git clone https://github.com/mayaseven/ezdomain.git
 ```
 
 ## Dependencies
-Python modules (urllib2, sys, argparse, time, tqdm, multiprocessing, termcolor)
+Python modules (requests, argparse, tqdm, multiprocessing, termcolor)
 
 - Installation on Windows:
 ```
