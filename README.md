@@ -1,14 +1,14 @@
-# About EZDomain
+## About EZDomain
 
-# Installation:
+## Installation
 
-# Dependencies:
+## Dependencies
 
-# Usage:
+## Usage
 
-## Examples:
+### Examples
 
-# License:
+## License
 
-## Version:
+### Version
 
