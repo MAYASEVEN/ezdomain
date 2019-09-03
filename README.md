@@ -46,5 +46,5 @@ sudo pip install -r requirements.txt
 ## License
 License of ezdomain is under GNU GPL license. [LICENSE](https://github.com/MAYASEVEN/ezdomain/blob/master/LICENSE)
 
-### Version
+## Version
 **Current version is 1.0**
