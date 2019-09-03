@@ -21,14 +21,14 @@ sudo pip install -r requirements.txt
 
 ## Usage
 
-Short        | Long       | Description
-----------------------------------------
--d           | --domain   | Providing a domain name (ex. domain-*.com)
--w           | --wordlist | Providing a path of a wordlist file
--o           | --output   | Providing a path of output file
--t           | --thread   | Providing a thread number (default is 3)
--x           | --exclude  | Providing a exclude output status code (ex. -x 443,404)
--h           | --help     | show this help message and exit
+| Short        | Long       | Description
+| ------------ |:----------:|------------:
+| -d           | --domain   | Providing a domain name (ex. domain-*.com)
+| -w           | --wordlist | Providing a path of a wordlist file
+| -o           | --output   | Providing a path of output file
+| -t           | --thread   | Providing a thread number (default is 3)
+| -x           | --exclude  | Providing a exclude output status code (ex. -x 443,404)
+| -h           | --help     | show this help message and exit
 
 ### Examples
 * To list all the options use -h:
