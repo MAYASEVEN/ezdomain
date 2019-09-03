@@ -1,5 +1,5 @@
 ## About EZDomain
-EZdomain is red team tool based on python programming that use to enumerate and scan the domains such as sub-domains, directory, S3 bucket by customizing the position of the payload in the URL and brute-forcing with provided wordlists.
+EZdomain is red team tool based on python programming that use to enumerate and scan the domains such as sub-domains, directory, S3 bucket by customizing the position (specific a * in the URL) of the payload and brute-forcing with provided wordlists.
 
 ## Installation
 ```
