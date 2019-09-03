@@ -35,7 +35,7 @@ sudo pip install -r requirements.txt
 ```python ezdomain.py -h```
 
 * To find the sub-domains\
-```python ezdomain.py -d "http://*.domain.com/" -w words/subdomain/subdomains-10000.txt -o domain.out -x 404```
+```python ezdomain.py -d "http://*.domain.com/" -w words/subdomain/subdomains-1000.txt -o domain.out -x 404```
 
 * To find the directory in the domain (You can exclude the 403 status code to find only a public bucket)\
 ```python ezdomain.py -d "https://domain.com/*" -w words/directory/directory-list-med.txt -o domain.out```
