@@ -33,7 +33,7 @@ sudo pip install -r requirements.txt
 | ------------- |-----------------|------------
 | -d            | --domain        | Providing a domain name (ex. domain-*.com)
 | -w            | --wordlist      | Providing a path of a wordlist file
-| -b            | --bruteforce    | Providing Providing the character set (eariotnslcudpmhgbfywkvxzjq0123456789-)
+| -b            | --bruteforce    | Providing Providing the character set (eariotnslcudpmhgbfywkvxzjq)
 | -min          | --min-length    | Providing the min length of string (default is 1)
 | -max          | --max-length    | Providing the max length of string (default is 3)
 | -o            | --output        | Providing a path of output file
