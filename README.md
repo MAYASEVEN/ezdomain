@@ -7,7 +7,7 @@
 
                                                                by MAYASEVEN.com
                                            
-EZdomain is red team tool based on python programming that use to enumerate and scan the domains such as sub-domains, directory, S3 bucket by customizing the position (specific an * in the URL) of the payload and brute-forcing with provided wordlists or string generated.
+EZdomain is red team tool based on python programming that use to enumerate and scan the domains such as sub-domains, directory, file, S3 bucket by customizing the position (specific an * in the URL) of the payload and brute-forcing with provided wordlists or string generated.
 
 ## Installation
 ```
@@ -49,10 +49,10 @@ python ezdomain.py -h
 
 * To find the sub-domains
 ```
-python ezdomain.py -d http://*.domain.com/ -w wordlists/subdomain/subdomains-1000.txt -x 404
+python ezdomain.py -d http://*.domain.com/ -w wordlists/subdomain/subdomains-1000.txt
 ```
 
-* To find the directory in the domain (You can exclude the 403 status code to find only a public bucket)
+* To find the directory or file in the domain
 ```
 python ezdomain.py -d https://domain.com/* -w wordlists/directory/directory-list-med.txt
 ```
