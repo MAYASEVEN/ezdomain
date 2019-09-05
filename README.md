@@ -34,7 +34,8 @@ sudo pip install -r requirements.txt
 | -d            | --domain        | Providing a domain name (ex. domain-*.com)
 | -w            | --wordlist      | Providing a path of a wordlist file
 | -b            | --bruteforce    | Providing Providing the character set (eariotnslcudpmhgbfywkvxzjq0123456789-)
-| -m            | --max-length    | Providing the max length of string (default is 3)
+| -min          | --min-length    | Providing the min length of string (default is 1)
+| -max          | --max-length    | Providing the max length of string (default is 3)
 | -o            | --output        | Providing a path of output file
 | -t            | --thread        | Providing a thread number (default is 3)
 | -x            | --exclude       | Providing a exclude output status code (ex. -x 443,404)
@@ -61,9 +62,9 @@ python ezdomain.py -d https://domain.com/* -w wordlists/directory/directory-list
 python ezdomain.py -d http://company-*.s3.amazonaws.com/ -w wordlists/word/common-words.txt -x 404
 ```
 
-* To brute-force the domain with character set and you can provide a max length of the payload string
+* To brute-force the domain with character set and you can provide a min or a max length of the payload string
 ```
-python ezdomain.py -d https://*.domain.com/ -b abc -m 5
+python ezdomain.py -d https://*.domain.com/ -b abc -min 3 -max 5
 ```
 
 ## License
