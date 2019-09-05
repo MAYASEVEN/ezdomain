@@ -54,7 +54,7 @@ python ezdomain.py -d http://*.domain.com/ -w wordlists/subdomain/subdomains-100
 
 * To find the directory or file in the domain
 ```
-python ezdomain.py -d https://domain.com/* -w wordlists/directory/directory-list-med.txt
+python ezdomain.py -d https://domain.com/* -w wordlists/directory/directory-list-med.txt -x 404
 ```
 
 * To find the S3 bucket (You can exclude the 403 status code to find only a public bucket)
