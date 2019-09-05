@@ -4,12 +4,21 @@ VERSION : 1.0
 AUTHOR  : MAYASEVEN.com
 GITHUB  : https://github.com/MAYASEVEN/ezdomain
 """
-import urllib2, sys, argparse, time, tqdm
+import urllib2, sys, argparse, time, tqdm, math
 from itertools import chain, product
 from termcolor import colored
 from multiprocessing import Pool
 
 start = time.time()
+
+def convert_size(size_bytes):
+   if size_bytes == 0:
+       return "0B"
+   size_name = ("B", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB")
+   i = int(math.floor(math.log(size_bytes, 1024)))
+   p = math.pow(1024, i)
+   s = round(size_bytes / p, 2)
+   return "%s%s" % (s, size_name[i])
 
 def bruteforce(charset, maxlength):
     return (''.join(candidate)
@@ -51,11 +60,12 @@ def main():
 	else:
 	    word = list(bruteforce(bruteforce_text, int(max_length)))
         p = Pool(processes=int(thread))
-        pbar = tqdm.tqdm(p.imap_unordered(checkurl, [domain.replace('*', x.split('\n')[0]) for x in word]),
-	    total=len(word), desc="[Progress]", unit="word")
+        pbar = tqdm.tqdm(p.imap_unordered(checkurl, [domain.replace('*', x.split('\n')[0]) for x in word]), total=len(word), desc="[Progress]", unit="word")
+	if(outputfile!=None):
+	    sys.stdout = open(outputfile, 'w')
 	for message in pbar:
 	    if(message!=None):
-	        pbar.write("\r"+" "*100+"\r"+message) 
+	        pbar.write("\r"+" "*150+"\r"+message) 
 	        pbar.update()
 	        time.sleep(0.1)
     except KeyboardInterrupt:
@@ -66,26 +76,22 @@ def main():
 	sys.exit()
 
 def checkurl(url):
-    if(outputfile!=None):
-        output = sys.stdout
-        sys.stdout = open(outputfile, 'w')
     status = ''
     try:
         headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 5.1; rv:10.0.1) Gecko/20100101 Firefox/10.0.1'}
         r = urllib2.Request(url, headers=headers)
         conn = urllib2.urlopen(url)
+	if(conn.geturl()!=url and '302' not in exclude):
+            status = colored('[302]', 'blue') + " - " + convert_size(conn.read().__sizeof__()) + " - " + url + colored(" > "+conn.geturl(), 'white')
+        elif('200' not in exclude):
+            status = colored('[200]', 'green') + " - " + convert_size(conn.read().__sizeof__()) + " - " + url
     except urllib2.HTTPError as e:
 	if(str(e.code) not in exclude):
-	    status = colored('[%s] ', 'red')  % e.code +url
+	    status = colored('[%s]', 'red') % e.code + " - " + convert_size(len(e.read())) + " - " + url
 	else: return
     except:
 	return 
-    else:
-        status = colored('[200] ', 'green')+url 
-    print status
-    if(outputfile!=None):
-        sys.stdout = output 
-        sys.stdout.flush()
+    print "\r"+" "*150+"\r"+status
     return status
 
 if __name__ == "__main__":
