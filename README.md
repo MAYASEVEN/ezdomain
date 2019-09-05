@@ -21,11 +21,11 @@ sudo pip install -r requirements.txt
 
 ## Usage
 
-| Short         | Short            | Description
+| Short         | Long            | Description
 | ------------- |-----------------|------------
 | -d            | --domain        | Providing a domain name (ex. domain-*.com)
 | -w            | --wordlist      | Providing a path of a wordlist file
-| -b            | --bruteforce    | Providing Providing the character set (default are eariotnslcudpmhgbfywkvxzjq0123456789-)
+| -b            | --bruteforce    | Providing Providing the character set 
 | -max          | --max-length    | Providing the max length of string (default is 3)
 | -o            | --output        | Providing a path of output file
 | -t            | --thread        | Providing a thread number (default is 3)
