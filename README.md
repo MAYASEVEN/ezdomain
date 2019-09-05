@@ -51,8 +51,8 @@ python ezdomain.py -d https://domain.com/* -w wordlists/directory/directory-list
 * To find the S3 bucket (You can exclude the 403 status code to find only a public bucket)
 ```
 python ezdomain.py -d http://company-*.s3.amazonaws.com/ -w wordlists/word/common-words.txt -x 404
-
 ```
+
 * To brute-force the domain with character set and you can provide a max length of the payload string
 ```
 python ezdomain.py -d https://*.domain.com/ -b abc -max 5
