@@ -1,3 +1,9 @@
+"""
+SOFTWARE: ezdomain 
+VERSION : 1.0
+AUTHOR  : MAYASEVEN.com
+GITHUB  : https://github.com/MAYASEVEN/ezdomain
+"""
 import urllib2, sys, argparse, time, tqdm
 from itertools import chain, product
 from termcolor import colored
@@ -11,6 +17,15 @@ def bruteforce(charset, maxlength):
         for i in xrange(1, maxlength + 1)))
 
 def main():
+    print """ 
+       ____  ___  __    __   _  _     _     ___   _   _
+      |        / |  \  |  | | \/ |   / \     |   | \  |
+      |>>>>   /  |   | |  | |    |  /___\    |   |  \ |
+      |____  /__ |__/  |__| |    | /     \  _|_  |   \|
+
+                                       by MAYASEVEN.com
+
+    """
     parser = argparse.ArgumentParser(description="""EZdomain is red team tool based on python programming that use to enumerate and scan the domains such as sub-domains, directory, S3 bucket by customizing the position (specific an * in the URL) of the payload and brute-forcing with provided wordlists or string generated.""")
     parser.add_argument("-d", "--domain", type=str, help="Providing a domain name (ex. domain-*.com)")
     parser.add_argument("-w", "--wordlist", type=str, help="Providing a path of a wordlist file")
