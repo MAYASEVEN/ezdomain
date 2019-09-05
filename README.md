@@ -1,11 +1,11 @@
 ## About EZDomain
 
-                                        ____  ___  __    __   _  _     _     ___   _   _
-                                       |        / |  \  |  | | \/ |   / \     |   | \  |
-                                       |>>>>   /  |   | |  | |    |  /___\    |   |  \ |
-                                       |____  /__ |__/  |__| |    | /     \  _|_  |   \|
+                               ____  ___  __    __   _  _     _     ___   _   _
+                              |        / |  \  |  | | \/ |   / \     |   | \  |
+                              |>>>>   /  |   | |  | |    |  /___\    |   |  \ |
+                              |____  /__ |__/  |__| |    | /     \  _|_  |   \|
 
-                                                                        by MAYASEVEN.com
+                                                               by MAYASEVEN.com
                                            
 EZdomain is red team tool based on python programming that use to enumerate and scan the domains such as sub-domains, directory, S3 bucket by customizing the position (specific an * in the URL) of the payload and brute-forcing with provided wordlists or string generated.
 
