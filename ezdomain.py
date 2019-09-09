@@ -95,7 +95,8 @@ def checkurl(url):
 	else: return
     except:
 	return 
-    print "\r"+" "*150+"\r"+status
+    if(outputfile!=None):
+        print "\r"+" "*150+"\r"+status+"inloop"
     return status
 
 if __name__ == "__main__":
