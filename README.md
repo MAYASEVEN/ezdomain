@@ -37,6 +37,7 @@ sudo pip install -r requirements.txt
 | -min          | --min-length    | Providing the min length of string (default is 1)
 | -max          | --max-length    | Providing the max length of string (default is 3)
 | -o            | --output        | Providing a path of output file
+| -oS           | --output-subdomain| A list of subdomains output; Providing a path of output file
 | -t            | --thread        | Providing a thread number (default is 3)
 | -x            | --exclude       | Providing a exclude output status code (ex. -x 443,404)
 | -h            | --help          | show this help message and exit
