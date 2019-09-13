@@ -10,6 +10,7 @@ from termcolor import colored
 from multiprocessing import Pool
 
 start = time.time()
+subdomains=[]
 
 def convert_size(size_bytes):
    if size_bytes == 0:
@@ -41,7 +42,8 @@ def main():
     parser.add_argument("-b", "--bruteforce", type=str, help="Providing the character set (default are eariotnslcudpmhgbfywkvxzjq)")
     parser.add_argument("-min", "--min-length", type=str, help="Providing the min length of string (default is 1)")
     parser.add_argument("-max", "--max-length", type=str, help="Providing the max length of string (default is 3)")
-    parser.add_argument("-o", "--output", type=str, help="Providing a path of output file")
+    parser.add_argument("-o", "--output", type=str, help="A standard output format; Providing a path of output file")
+    parser.add_argument("-oS", "--output-subdomain", type=str, help="A list of subdomains output; Providing a path of output file")
     parser.add_argument("-t", "--thread", type=str, help="Providing a thread number (default is 3)")
     parser.add_argument("-x", "--exclude", type=str, help="Providing a exclude output status code (ex. -x 443,404)")
     args=parser.parse_args()
@@ -49,6 +51,8 @@ def main():
     words=args.wordlist
     global outputfile
     outputfile=args.output
+    global outputfile_subdomain
+    outputfile_subdomain=args.output_subdomain if outputfile==None else None
     global exclude
     exclude=args.exclude.split(",") if args.exclude!=None else "999"
     thread=args.thread or 3
@@ -69,9 +73,16 @@ def main():
 	    sys.stdout = open(outputfile, 'w')
 	for message in pbar:
 	    if(message!=None):
-	        pbar.write("\r"+" "*150+"\r"+message) 
+	        pbar.write("\r"+" "*150+"\r"+message[1])
+                subdomains.append(message[0])
 	        pbar.update()
 	        time.sleep(0.1)
+        if(outputfile_subdomain!=None):
+            f = open(outputfile_subdomain, "w+")
+            for i in set(subdomains):
+                f.write(i+'\n')
+            f.close()
+            print "\n".join(map(str, set(subdomains)))
     except KeyboardInterrupt:
 	p.terminate()
 	sys.exit()
@@ -95,9 +106,9 @@ def checkurl(url):
 	else: return
     except:
 	return 
-    if(outputfile!=None):
+    if(outputfile!=None and outputfile_subdomain !=None):
         print "\r"+" "*150+"\r"+status+"inloop"
-    return status
+    return (url, status)
 
 if __name__ == "__main__":
     main()
