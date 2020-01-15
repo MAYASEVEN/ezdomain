@@ -19,12 +19,12 @@ Python modules (requests, argparse, tqdm, multiprocessing, termcolor)
 
 - Installation on Windows:
 ```
-c:\python27\python.exe -m pip install -r requirements.txt
+c:\python3\python.exe -m pip install -r requirements.txt
 ```
 
 - Installation on Linux and MacOSX
 ```
-sudo pip install -r requirements.txt
+sudo pip3 install -r requirements.txt
 ```
 
 ## Usage
@@ -45,27 +45,27 @@ sudo pip install -r requirements.txt
 ### Examples
 * To list all the options use -h
 ```
-python ezdomain.py -h
+python3 ezdomain.py -h
 ```
 
 * To find the sub-domains
 ```
-python ezdomain.py -d http://*.domain.com/ -w wordlists/subdomain/subdomains-1000.txt
+python3 ezdomain.py -d http://*.domain.com/ -w wordlists/subdomain/subdomains-1000.txt
 ```
 
 * To find the directory or file in the domain
 ```
-python ezdomain.py -d https://domain.com/* -w wordlists/directory/directory-list-med.txt -x 404
+python3 ezdomain.py -d https://domain.com/* -w wordlists/directory/directory-list-med.txt -x 404
 ```
 
 * To find the S3 bucket (You can exclude the 403 status code to find only a public bucket)
 ```
-python ezdomain.py -d http://company-*.s3.amazonaws.com/ -w wordlists/word/common-words.txt -x 404
+python3 ezdomain.py -d http://company-*.s3.amazonaws.com/ -w wordlists/word/common-words.txt -x 404
 ```
 
 * To brute-force the domain with character set and you can provide a min or a max length of the payload string
 ```
-python ezdomain.py -d https://*.domain.com/ -b abc -min 3 -max 5
+python3 ezdomain.py -d https://*.domain.com/ -b abc -min 3 -max 5
 ```
 
 ## License
