@@ -1,5 +1,5 @@
 termcolor==1.1.0
 tqdm==4.35.0
-requests==2.22.0
+requests==2.31.0
 argparse==1.4.0
 requests[security]==2.18.4
